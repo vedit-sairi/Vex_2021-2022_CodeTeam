@@ -1,1 +1,39 @@
+void autonomous(void) {
 
+  leftfront.setVelocity(30 , percent);
+  leftback.setVelocity(30 , percent);
+  rightfront.setVelocity(30 , percent);
+  rightback.setVelocity(30 , percent);
+
+  leftfront.startRotateFor(vex::directionType::fwd , 750, vex::rotationUnits::deg);
+  leftback.startRotateFor(vex::directionType::fwd , 750, vex::rotationUnits::deg);
+  leftfront.startRotateFor(vex::directionType::fwd , 750, vex::rotationUnits::deg);
+  leftfront.startRotateFor(vex::directionType::fwd , 750, vex::rotationUnits::deg);
+
+  //turn left pivot 
+
+  leftfront.startRotateFor(vex::directionType::rev ,90 ,vex::rotationUnits::deg);
+  leftback.startRotateFor(vex::directionType::rev ,90 ,vex::rotationUnits::deg);
+  rightfront.startRotateFor(vex::directionType::fwd ,90 ,vex::rotationUnits::deg);
+  rightback.rotateFor(vex::directionType::fwd ,90 ,vex::rotationUnits::deg);
+
+ // move goal into claw 
+
+  leftfront.setVelocity(30 , percent);
+  leftback.setVelocity(30 , percent);
+  rightfront.setVelocity(30 , percent);
+  rightback.setVelocity(30 , percent);
+
+  leftfront.startRotateFor(vex::directionType::fwd , 100, vex::rotationUnits::deg);
+  leftback.startRotateFor(vex::directionType::fwd , 100, vex::rotationUnits::deg);
+  leftfront.startRotateFor(vex::directionType::fwd , 100, vex::rotationUnits::deg);
+  leftfront.startRotateFor(vex::directionType::fwd , 100, vex::rotationUnits::deg);
+
+  // lift goal 
+
+
+  forklift.spinFor(vex::directionType::fwd ,90 ,vex::rotationUnits::deg);
+
+  vex::task::sleep(2000); //pauses 
+
+}
