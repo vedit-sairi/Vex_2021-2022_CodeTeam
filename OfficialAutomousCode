@@ -1,7 +1,3 @@
-#include "vex.h"
-
-using namespace vex;
-
 void autonomous(void) {
 
 
@@ -35,45 +31,66 @@ void autonomous(void) {
   */
 
 
-  //moving to the neutral goal
-  leftFront.setVelocity(30 , percent);
-  leftBack.setVelocity(30 , percent);
-  rightFront.setVelocity(30 , percent);
-  rightBack.setVelocity(30 , percent);
+  //moving to the mobil goal
+  
 
-  leftFront.startRotateFor(vex::directionType::fwd , 750, vex::rotationUnits::deg);
-  leftBack.startRotateFor(vex::directionType::fwd , 750, vex::rotationUnits::deg);
-  leftFront.startRotateFor(vex::directionType::fwd , 750, vex::rotationUnits::deg);
-  leftFront.startRotateFor(vex::directionType::fwd , 750, vex::rotationUnits::deg);
+  
+  leftFront.setVelocity(100 , percent);
+  leftBack.setVelocity(100 , percent);
+  rightFront.setVelocity(100 , percent);
+  rightBack.setVelocity(100 , percent);
+
+  leftFront.startRotateFor(vex::directionType::fwd , 1440, vex::rotationUnits::deg);
+  leftBack.startRotateFor(vex::directionType::fwd , 1440, vex::rotationUnits::deg);
+  rightFront.startRotateFor(vex::directionType::rev , 1440, vex::rotationUnits::deg);
+  rightBack.rotateFor(vex::directionType::rev , 1440, vex::rotationUnits::deg);
+
+  
+
+
+  
+  //lift moves down
+  
+  lifter.setPosition(0, degrees);
+  lifter2.setPosition(0, degrees);
+
+  lifter.spinFor(vex::directionType::rev ,2 ,turns);
+  lifter2.spinFor(vex::directionType::fwd, 2 , turns);
+
+  lifter.stop();
+  lifter2.stop();
+  
+  //move into position
+
+
+
 
   //turn right pivot 
 
-  leftFront.startRotateFor(vex::directionType::fwd ,90 ,vex::rotationUnits::deg);
-  leftBack.startRotateFor(vex::directionType::fwd ,90 ,vex::rotationUnits::deg);
-  rightFront.startRotateFor(vex::directionType::rev ,90 ,vex::rotationUnits::deg);
-  rightBack.rotateFor(vex::directionType::rev ,90 ,vex::rotationUnits::deg);
+  //leftFront.startRotateFor(vex::directionType::fwd ,90 ,vex::rotationUnits::deg);
+  //leftBack.startRotateFor(vex::directionType::fwd ,90 ,vex::rotationUnits::deg);
+  //rightFront.startRotateFor(vex::directionType::rev ,90 ,vex::rotationUnits::deg);
+  //rightBack.rotateFor(vex::directionType::rev ,90 ,vex::rotationUnits::deg);
 
  // move goal into claw 
 
-  leftFront.setVelocity(30 , percent);
-  leftBack.setVelocity(30 , percent);
-  rightFront.setVelocity(30 , percent);
-  rightBack.setVelocity(30 , percent);
+ 
 
-  leftFront.startRotateFor(vex::directionType::fwd , 100, vex::rotationUnits::deg);
-  leftBack.startRotateFor(vex::directionType::fwd , 100, vex::rotationUnits::deg);
-  leftFront.startRotateFor(vex::directionType::fwd , 100, vex::rotationUnits::deg);
-  leftFront.startRotateFor(vex::directionType::fwd , 100, vex::rotationUnits::deg);
+  //leftFront.startRotateFor(vex::directionType::fwd , 360, vex::rotationUnits::deg);
+  //leftBack.startRotateFor(vex::directionType::fwd , 360, vex::rotationUnits::deg);
+  //rightFront.startRotateFor(vex::directionType::rev , 360, vex::rotationUnits::deg);
+  //rightBack.rotateFor(vex::directionType::rev , 360, vex::rotationUnits::deg);
 
   // lift goal 
 
 
-  lifter.spinFor(vex::directionType::fwd ,90 ,vex::rotationUnits::deg);
-  lifter2.spinFor(vex::directionType::fwd, 90, vex::rotationUnits::deg);
+  //lifter.spinFor(vex::directionType::fwd ,90 ,vex::rotationUnits::deg);
+  //lifter2.spinFor(vex::directionType::fwd, 90, vex::rotationUnits::deg);
 
-  //
+  //go back
+  
 
-  vex::task::sleep(2000); //pauses 
+  //vex::task::sleep(2000); //pauses 
 
   
 
