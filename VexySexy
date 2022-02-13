@@ -123,22 +123,22 @@ void autonomous(void) {
   
   //lift moves down
   
-  //lifter.setPosition(0, degrees);
+  lifter.setPosition(0, degrees);
 
-  //lifter.spinFor(vex::directionType::fwd ,90 ,vex::rotationUnits::deg);
+  lifter.spinFor(vex::directionType::fwd ,90 ,vex::rotationUnits::deg);
 
   
   
   //move into position
 
-  //leftFront.startRotateFor(vex::directionType::fwd , 369, vex::rotationUnits::deg);
-  //leftBack.startRotateFor(vex::directionType::fwd , 360, vex::rotationUnits::deg);
-  //rightFront.startRotateFor(vex::directionType::fwd , 360, vex::rotationUnits::deg);
-  //rightBack.rotateFor(vex::directionType::fwd , 360, vex::rotationUnits::deg);
+  leftFront.startRotateFor(vex::directionType::fwd , 369, vex::rotationUnits::deg);
+  leftBack.startRotateFor(vex::directionType::fwd , 360, vex::rotationUnits::deg);
+  rightFront.startRotateFor(vex::directionType::fwd , 360, vex::rotationUnits::deg);
+  rightBack.rotateFor(vex::directionType::fwd , 360, vex::rotationUnits::deg);
 
   //lift moves up
 
-  //lifter.spinFor(vex::directionType::rev ,90 ,vex::rotationUnits::deg);
+  lifter.spinFor(vex::directionType::rev ,90 ,vex::rotationUnits::deg);
 
   
 
@@ -208,7 +208,7 @@ void usercontrol(void) {
 
     if(Controller1.ButtonL1.pressing())
     {
-      lifter.spin(vex::directionType::rev, 50, vex::velocityUnits::pct);
+      lifter.spin(vex::directionType::rev, 75, vex::velocityUnits::pct);
       
 
 
@@ -216,24 +216,24 @@ void usercontrol(void) {
     }
     else if(Controller1.ButtonR1.pressing())
     {
-      lifter.spin(vex::directionType::fwd, 50, vex::velocityUnits::pct);
+      lifter.spin(vex::directionType::fwd, 75, vex::velocityUnits::pct);
       
 
 
     }
     else if(Controller1.ButtonA.pressing())
     {
-      clamp.spin(vex::directionType::rev, 75, vex::velocityUnits::pct);
+      clamp.spin(vex::directionType::rev, 50, vex::velocityUnits::pct);
     }
 
     else if(Controller1.ButtonL2.pressing())
     {
-      fourBarLift.spin(vex::directionType::rev, 75, vex::velocityUnits::pct);
+      fourBarLift.spin(vex::directionType::rev, 50, vex::velocityUnits::pct);
     }
 
     else if(Controller1.ButtonR2.pressing())
     {
-      fourBarLift.spin(vex::directionType::fwd, 75, vex::velocityUnits::pct);
+      fourBarLift.spin(vex::directionType::fwd, 50, vex::velocityUnits::pct);
 
     }
     else
